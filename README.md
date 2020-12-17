@@ -15,7 +15,7 @@ Componentes:
 * Programa Terminal ou Hiperterminal
 * Conversor USB-Serial (opcional)
 
-### Comunicação serial RS-232
+### Lab01 - Comunicação serial RS-232
 
 Utilizando o Processor Expert, desenvolva um programa que comunique via serial padrão RS-232 com um computador.
 
@@ -41,7 +41,7 @@ Se o computador demorar mais que 100ms(timeout) para enviar o próximo caractere
 Obs.: (ab)^n :se n = 0, (ab)^0 = cadeia vazia, se n = 1, (ab)^1 = ab, se n = 2, (ab)^2 = abab, etc
 Quando uma cadeia válida for reconhecida os leds 3 e 4 devem acender por 2 segundos e apagar.
 
-### Conversor Analógico Digital - Potenciômetro
+### Lab02 - Conversor Analógico Digital, Potenciômetro
 
 Você deverá desenvolver um programa que meça a tensão do potenciômetro e envie o valor via serial.
 
@@ -54,7 +54,7 @@ microcontrolador está conectado ao potenciômetro.
 
 4. Deve ser mostrado no computador o valor da tensão medida no potenciômetro, variando de 0 V a 3,3 V. Não será aceito valores em binário ou hexadecimal. Deve-se utilizar os 12 bits do conversor analógico digital, não será aceito efetuar somente a leitura dos 8 bits mais significativos ou dos 8 bits menos significativos.
 
-### Conversor Analógico Digital –Acelerômetro
+### Lab03 - Conversor Analógico Digital, Acelerômetro
 
 Nesta parte você deverá desenvolver um programa que meça o sinal do acelerômetro e envie o valor via serial.
 
