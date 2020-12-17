@@ -1,0 +1,91 @@
+
+
+#>00000400          ___heap_size (linker command file)
+#>00000400          ___stack_size (linker command file)
+
+# .ipsbar
+
+# .interrupts
+#>20000000          ___VECTOR_RAM (linker command file)
+  20000000 00000300 .vectortable _InterruptVectorTable	(Vectors_c.obj)
+
+# .text
+  20000600 000000D4 .text   TI1_Init	(TI1_c.obj)
+  200006D4 0000002C .text   TI1_Interrupt	(TI1_c.obj)
+  20000700 00000014 .text   Cpu_Interrupt	(Cpu_c.obj)
+  20000714 00000024 .text   Cpu_INT_SCM_SWTIInterrupt	(Cpu_c.obj)
+  20000738 000000C2 .text   __initialize_hardware	(Cpu_c.obj)
+  200007FA 000003B6 .text   PE_low_level_init	(Cpu_c.obj)
+  20000BB0 00000014 .text   Bits2_GetVal	(Bits2_c.obj)
+  20000BC4 00000014 .text   Bits1_GetVal	(Bits1_c.obj)
+  20000BD8 00000034 .text   Bits1_PutVal	(Bits1_c.obj)
+  20000C0C 00000008 .text   __initialize_system	(startcf_c.obj)
+  20000C14 0000006C .text   __copy_rom_section	(startcf_c.obj)
+  20000C80 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  20000CDC 00000004 .text   _ExitProcess	(startcf_c.obj)
+  20000CE0 0000022A .text   clear_mem	(startcf_c.obj)
+  20000F0A 0000009A .text   _startup	(startcf_c.obj)
+  20000FA4 000000A2 .text   main	(main_c.obj)
+  20001046 00000008 .text   Cpu_OnCoreWatchdogINT	(Events_c.obj)
+  2000104E 00000024 .text   TI1_OnInterrupt	(Events_c.obj)
+  20001072 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+  2000108E 0000002C .text   __destroy_global_chain	(librt.a cf_staticinitia)
+  200010BA 0000000C .text   _ewl_exit	(librt.a abort_exit.o   )
+  200010C8 00000014 .rodata m	(main_c.obj)
+#>200010DC          ___ROM_AT (linker command file)
+#>200010DC          ___DATA_ROM (linker command file)
+
+# .data
+#>2000AC00          ___DATA_RAM (linker command file)
+#>2000AC00          __exception_table_start__ (linker command file)
+# Exception index
+  2000AC00 00000000         Exception Table Index	()
+#>2000AC00          __exception_table_end__ (linker command file)
+#>2000AC00          ___sinit__ (linker command file)
+# Linker generated symbols
+  2000AC00 00000004         static initializer	(linker generated)
+#>2000AC04          ___DATA_START (linker command file)
+  2000AC04 00000001 .data   temporizador	(main_c.obj)
+#>2000AC08          ___DATA_END (linker command file)
+#>2000AC08          __SDATA_START (linker command file)
+#>2000AC08          __SDATA_END (linker command file)
+#>2000AC08          __SDA_BASE (linker command file)
+
+# .bss
+#>2000AC08          __START_SBSS (linker command file)
+#>2000AC08          __END_SBSS (linker command file)
+#>2000AC08          __START_BSS (linker command file)
+  2000AC08 00000004 .bss    __global_destructor_chain	(librt.a cf_staticinitia)
+#>2000AC0C          __END_BSS (linker command file)
+#>20000000          ___RAMBAR (linker command file)
+#>00010000          ___RAMBAR_SIZE (linker command file)
+#>00000000          ___FLASH_ADDRESS (linker command file)
+#>00080000          ___FLASH_SIZE (linker command file)
+#>40000000          ___IPSBAR (linker command file)
+#>2000FFFC          ___SP_AFTER_RESET (linker command file)
+#>2000AC0C          ___HEAP_START (linker command file)
+#>2000B00C          ___HEAP_END (linker command file)
+#>2000B00C          ___SP_END (linker command file)
+#>2000B40C          ___SP_INIT (linker command file)
+#>2000B00C          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>2000AC0C          ___heap_addr (linker command file)
+#>00000400          ___heap_size (linker command file)
+#>2000B40C          __SP_INIT (linker command file)
+#>200010E4          _romp_at (linker command file)
+
+# .romp
+#>200010E4          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  20000000 20000000 00000300 .interrupts interrupts
+  20000600 20000600 00000ADC .text      code
+  2000AC00 200010DC 00000008 .data      data
+  2000AC08 2000AC08 00000004 .bss       data
+  2000AC0C 200010E4 00000018 .romp      data
+  40000000 40000000 00000000 .ipsbar    ipsbar
+
+# Link start time: Tue Apr 04 11:45:55 2017
+# Link end time: Tue Apr 04 11:45:56 2017
