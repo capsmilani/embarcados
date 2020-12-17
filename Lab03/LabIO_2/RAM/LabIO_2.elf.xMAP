@@ -1,0 +1,135 @@
+
+
+#>00000400          ___heap_size (linker command file)
+#>00000400          ___stack_size (linker command file)
+
+# .ipsbar
+
+# .interrupts
+#>20000000          ___VECTOR_RAM (linker command file)
+  20000000 00000300 .vectortable _InterruptVectorTable	(Vectors_c.obj)
+
+# .text
+  20000600 00000026 .text   Term1_SendChar	(Term1_c.obj)
+  20000626 0000004A .text   Term1_SendStr	(Term1_c.obj)
+  20000670 000002F0 .text   FloatToStr	(Term1_c.obj)
+  20000960 00000082 .text   Term1_SendFloatNum	(Term1_c.obj)
+  200009E2 000000D4 .text   TI1_Init	(TI1_c.obj)
+  20000AB6 0000002C .text   TI1_Interrupt	(TI1_c.obj)
+  20000AE2 0000002C .text   Inhr1_SendChar	(Inhr1_c.obj)
+  20000B0E 00000050 .text   Inhr1_Init	(Inhr1_c.obj)
+  20000B5E 00000014 .text   Cpu_Interrupt	(Cpu_c.obj)
+  20000B72 00000024 .text   Cpu_INT_SCM_SWTIInterrupt	(Cpu_c.obj)
+  20000B96 000000C2 .text   __initialize_hardware	(Cpu_c.obj)
+  20000C58 000003AC .text   PE_low_level_init	(Cpu_c.obj)
+  20001004 00000034 .text   Bits1_PutVal	(Bits1_c.obj)
+  20001038 000000B8 .text   MainMeasure	(AD1_c.obj)
+  200010F0 000000C2 .text   HWEnDi	(AD1_c.obj)
+  200011B2 0000008A .text   AD1_MeasureChan	(AD1_c.obj)
+  2000123C 00000076 .text   AD1_GetChanValue	(AD1_c.obj)
+  200012B2 000000E0 .text   AD1_Init	(AD1_c.obj)
+  20001392 00000008 .text   __initialize_system	(startcf_c.obj)
+  2000139A 0000006C .text   __copy_rom_section	(startcf_c.obj)
+  20001406 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  20001462 00000004 .text   _ExitProcess	(startcf_c.obj)
+  20001466 0000022A .text   clear_mem	(startcf_c.obj)
+  20001690 0000009A .text   _startup	(startcf_c.obj)
+  2000172A 00000270 .text   main	(main_c.obj)
+  2000199A 00000008 .text   Cpu_OnCoreWatchdogINT	(Events_c.obj)
+  200019A2 00000010 .text   TI1_OnInterrupt	(Events_c.obj)
+  200019B2 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+  200019CE 0000002C .text   __destroy_global_chain	(librt.a cf_staticinitia)
+  200019FA 0000000C .text   _ewl_exit	(librt.a abort_exit.o   )
+  20001A08 000005D0 .text   @DummyFn12	(fp_coldfire.a fadd.o         )
+  20001A08 000005D0 .text   .text	(fp_coldfire.a fadd.o         )
+  20001A08 00000000 .text   _f_sub	(fp_coldfire.a fadd.o         )
+  20001A24 00000000 .text   _f_add	(fp_coldfire.a fadd.o         )
+  20001FD8 00000000 .text   _f_cmp	(fp_coldfire.a fcompare.o     )
+  20001FD8 00000112 .text   .text	(fp_coldfire.a fcompare.o     )
+  20001FD8 00000112 .text   @DummyFn13	(fp_coldfire.a fcompare.o     )
+  20001FE2 00000000 .text   _f_cmpe	(fp_coldfire.a fcompare.o     )
+  20001FEC 00000000 .text   _f_feq	(fp_coldfire.a fcompare.o     )
+  20001FF2 00000000 .text   _f_fne	(fp_coldfire.a fcompare.o     )
+  20001FF8 00000000 .text   _f_flt	(fp_coldfire.a fcompare.o     )
+  20001FFE 00000000 .text   _f_fle	(fp_coldfire.a fcompare.o     )
+  20002004 00000000 .text   _f_fgt	(fp_coldfire.a fcompare.o     )
+  2000200A 00000000 .text   _f_fge	(fp_coldfire.a fcompare.o     )
+  20002014 00000000 .text   _f_fun	(fp_coldfire.a fcompare.o     )
+  2000201A 00000000 .text   _f_for	(fp_coldfire.a fcompare.o     )
+  200020EC 00000390 .text   @DummyFn15	(fp_coldfire.a fmul.o         )
+  200020EC 00000000 .text   _f_mul	(fp_coldfire.a fmul.o         )
+  200020EC 00000390 .text   .text	(fp_coldfire.a fmul.o         )
+  2000247C 0000004A .text   @DummyFn20	(fp_coldfire.a ftou.o         )
+  2000247C 00000000 .text   _f_ftou	(fp_coldfire.a ftou.o         )
+  2000247C 0000004A .text   .text	(fp_coldfire.a ftou.o         )
+  200024C8 00000126 .text   @DummyFn23	(fp_coldfire.a int_to_f.o     )
+  200024C8 00000126 .text   .text	(fp_coldfire.a int_to_f.o     )
+  200024C8 00000000 .text   _f_utof	(fp_coldfire.a int_to_f.o     )
+  20002518 00000000 .text   _f_itof	(fp_coldfire.a int_to_f.o     )
+  20002534 00000000 .text   _f_ulltof	(fp_coldfire.a int_to_f.o     )
+  200025A8 00000000 .text   _f_lltof	(fp_coldfire.a int_to_f.o     )
+  200025F0 00000003 .rodata Table	(AD1_c.obj)
+  200025F3 00000003 .rodata Channels	(AD1_c.obj)
+  200025F6 00000002 .rodata @72	(main_c.obj)
+#>200025F8          ___ROM_AT (linker command file)
+#>200025F8          ___DATA_ROM (linker command file)
+
+# .data
+#>2000AC00          ___DATA_RAM (linker command file)
+#>2000AC00          __exception_table_start__ (linker command file)
+# Exception index
+  2000AC00 00000000         Exception Table Index	()
+#>2000AC00          __exception_table_end__ (linker command file)
+#>2000AC00          ___sinit__ (linker command file)
+# Linker generated symbols
+  2000AC00 00000004         static initializer	(linker generated)
+#>2000AC04          ___DATA_START (linker command file)
+#>2000AC04          ___DATA_END (linker command file)
+#>2000AC04          __SDATA_START (linker command file)
+#>2000AC04          __SDATA_END (linker command file)
+#>2000AC04          __SDA_BASE (linker command file)
+
+# .bss
+#>2000AC04          __START_SBSS (linker command file)
+#>2000AC04          __END_SBSS (linker command file)
+#>2000AC04          __START_BSS (linker command file)
+  2000AC04 00000002 .bss    SerFlag	(Inhr1_c.obj)
+  2000AC06 00000006 .bss    AD1_OutV	(AD1_c.obj)
+  2000AC0C 00000001 .bss    AD1_ModeFlg	(AD1_c.obj)
+  2000AC0D 00000001 .bss    SumChan	(AD1_c.obj)
+  2000AC0E 00000001 .bss    OutFlg	(AD1_c.obj)
+  2000AC0F 00000001 .bss    flag	(main_c.obj)
+  2000AC10 00000004 .bss    __global_destructor_chain	(librt.a cf_staticinitia)
+#>2000AC14          __END_BSS (linker command file)
+#>20000000          ___RAMBAR (linker command file)
+#>00010000          ___RAMBAR_SIZE (linker command file)
+#>00000000          ___FLASH_ADDRESS (linker command file)
+#>00080000          ___FLASH_SIZE (linker command file)
+#>40000000          ___IPSBAR (linker command file)
+#>2000FFFC          ___SP_AFTER_RESET (linker command file)
+#>2000AC14          ___HEAP_START (linker command file)
+#>2000B014          ___HEAP_END (linker command file)
+#>2000B014          ___SP_END (linker command file)
+#>2000B414          ___SP_INIT (linker command file)
+#>2000B014          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>2000AC14          ___heap_addr (linker command file)
+#>00000400          ___heap_size (linker command file)
+#>2000B414          __SP_INIT (linker command file)
+#>200025FC          _romp_at (linker command file)
+
+# .romp
+#>200025FC          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  20000000 20000000 00000300 .interrupts interrupts
+  20000600 20000600 00001FF8 .text      code
+  2000AC00 200025F8 00000004 .data      data
+  2000AC04 2000AC04 00000010 .bss       data
+  2000AC14 200025FC 00000018 .romp      data
+  40000000 40000000 00000000 .ipsbar    ipsbar
+
+# Link start time: Tue May 30 19:47:49 2017
+# Link end time: Tue May 30 19:47:49 2017
