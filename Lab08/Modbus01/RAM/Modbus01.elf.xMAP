@@ -1,0 +1,139 @@
+
+
+#>00000400          ___heap_size (linker command file)
+#>00000400          ___stack_size (linker command file)
+
+# .ipsbar
+
+# .interrupts
+#>20000000          ___VECTOR_RAM (linker command file)
+  20000000 00000300 .vectortable _InterruptVectorTable	(Vectors_c.obj)
+
+# .text
+  20000600 00000026 .text   Term1_SendChar	(Term1_c.obj)
+  20000626 00000024 .text   Term1_ReadChar	(Term1_c.obj)
+  2000064A 000000D4 .text   TI1_Init	(TI1_c.obj)
+  2000071E 0000002C .text   TI1_Interrupt	(TI1_c.obj)
+  2000074A 00000018 .text   HWEnDi	(Inhr1_c.obj)
+  20000762 0000012E .text   Inhr1_RecvChar	(Inhr1_c.obj)
+  20000890 00000102 .text   Inhr1_SendChar	(Inhr1_c.obj)
+  20000992 000000DC .text   Inhr1_InterruptRx	(Inhr1_c.obj)
+  20000A6E 000000A0 .text   Inhr1_InterruptTx	(Inhr1_c.obj)
+  20000B0E 000000BE .text   Inhr1_Interrupt	(Inhr1_c.obj)
+  20000BCC 0000009A .text   Inhr1_Init	(Inhr1_c.obj)
+  20000C66 00000014 .text   Cpu_Interrupt	(Cpu_c.obj)
+  20000C7A 00000024 .text   Cpu_INT_SCM_SWTIInterrupt	(Cpu_c.obj)
+  20000C9E 000000C2 .text   __initialize_hardware	(Cpu_c.obj)
+  20000D60 00000424 .text   PE_low_level_init	(Cpu_c.obj)
+  20001184 0000003C .text   Bits3_GetMsk	(Bits3_c.obj)
+  200011C0 00000050 .text   Bits3_GetBit	(Bits3_c.obj)
+  20001210 0000003C .text   Bits2_GetMsk	(Bits2_c.obj)
+  2000124C 00000050 .text   Bits2_GetBit	(Bits2_c.obj)
+  2000129C 0000003C .text   Bits1_GetMsk	(Bits1_c.obj)
+  200012D8 00000050 .text   Bits1_GetBit	(Bits1_c.obj)
+  20001328 0000004C .text   Bits1_PutBit	(Bits1_c.obj)
+  20001374 000000C4 .text   MainMeasure	(AD1_c.obj)
+  20001438 000000C2 .text   HWEnDi	(AD1_c.obj)
+  200014FA 0000008A .text   AD1_MeasureChan	(AD1_c.obj)
+  20001584 00000076 .text   AD1_GetChanValue	(AD1_c.obj)
+  200015FA 000000FA .text   AD1_Init	(AD1_c.obj)
+  200016F4 00000008 .text   __initialize_system	(startcf_c.obj)
+  200016FC 0000006C .text   __copy_rom_section	(startcf_c.obj)
+  20001768 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  200017C4 00000004 .text   _ExitProcess	(startcf_c.obj)
+  200017C8 0000022A .text   clear_mem	(startcf_c.obj)
+  200019F2 0000009A .text   _startup	(startcf_c.obj)
+  20001A8C 000000A8 .text   usMBCRC16	(main_c.obj)
+  20001B34 00000B0A .text   main	(main_c.obj)
+  2000263E 00000008 .text   Cpu_OnCoreWatchdogINT	(Events_c.obj)
+  20002646 00000086 .text   Inhr1_OnRxChar	(Events_c.obj)
+  200026CC 000000C6 .text   TI1_OnInterrupt	(Events_c.obj)
+  20002792 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+  200027AE 0000002C .text   __destroy_global_chain	(librt.a cf_staticinitia)
+  200027DA 0000000C .text   _ewl_exit	(librt.a abort_exit.o   )
+  200027E8 00000004 .rodata Bits3_Table	(Bits3_c.obj)
+  200027EC 00000002 .rodata Bits2_Table	(Bits2_c.obj)
+  200027EE 00000004 .rodata Bits1_Table	(Bits1_c.obj)
+  200027F2 00000004 .rodata Table	(AD1_c.obj)
+  200027F6 00000004 .rodata Channels	(AD1_c.obj)
+  200027FA 00000100 .rodata aucCRCHi	(main_c.obj)
+  200028FA 00000100 .rodata aucCRCLo	(main_c.obj)
+#>200029FC          ___ROM_AT (linker command file)
+#>200029FC          ___DATA_ROM (linker command file)
+
+# .data
+#>2000AC00          ___DATA_RAM (linker command file)
+#>2000AC00          __exception_table_start__ (linker command file)
+# Exception index
+  2000AC00 00000000         Exception Table Index	()
+#>2000AC00          __exception_table_end__ (linker command file)
+#>2000AC00          ___sinit__ (linker command file)
+# Linker generated symbols
+  2000AC00 00000004         static initializer	(linker generated)
+#>2000AC04          ___DATA_START (linker command file)
+  2000AC04 00000001 .data   hour	(main_c.obj)
+  2000AC05 00000001 .data   min	(main_c.obj)
+  2000AC06 00000001 .data   sec	(main_c.obj)
+  2000AC07 00000001 .data   timeout	(main_c.obj)
+#>2000AC08          ___DATA_END (linker command file)
+#>2000AC08          __SDATA_START (linker command file)
+#>2000AC08          __SDATA_END (linker command file)
+#>2000AC08          __SDA_BASE (linker command file)
+
+# .bss
+#>2000AC08          __START_SBSS (linker command file)
+#>2000AC08          __END_SBSS (linker command file)
+#>2000AC08          __START_BSS (linker command file)
+  2000AC08 00000010 .bss    OutBuffer	(Inhr1_c.obj)
+  2000AC18 00000004 .bss    OutPtrW	(Inhr1_c.obj)
+  2000AC1C 00000004 .bss    OutPtrR	(Inhr1_c.obj)
+  2000AC20 00000002 .bss    Inhr1_OutLen	(Inhr1_c.obj)
+  2000AC22 00000010 .bss    InpBuffer	(Inhr1_c.obj)
+  2000AC34 00000004 .bss    InpPtrW	(Inhr1_c.obj)
+  2000AC38 00000004 .bss    InpPtrR	(Inhr1_c.obj)
+  2000AC3C 00000002 .bss    Inhr1_InpLen	(Inhr1_c.obj)
+  2000AC3E 00000002 .bss    SerFlag	(Inhr1_c.obj)
+  2000AC40 00000001 .bss    SR_lock	(Cpu_c.obj)
+  2000AC42 00000002 .bss    SR_reg	(Cpu_c.obj)
+  2000AC44 00000008 .bss    AD1_OutV	(AD1_c.obj)
+  2000AC4C 00000001 .bss    AD1_ModeFlg	(AD1_c.obj)
+  2000AC4D 00000001 .bss    SumChan	(AD1_c.obj)
+  2000AC4E 00000001 .bss    OutFlg	(AD1_c.obj)
+  2000AC4F 00000001 .bss    abc	(main_c.obj)
+  2000AC50 00000001 .bss    flag_recepcao	(main_c.obj)
+  2000AC51 00000001 .bss    a	(main_c.obj)
+  2000AC52 00000010 .bss    data_rx	(main_c.obj)
+  2000AC64 00000004 .bss    __global_destructor_chain	(librt.a cf_staticinitia)
+#>2000AC68          __END_BSS (linker command file)
+#>20000000          ___RAMBAR (linker command file)
+#>00010000          ___RAMBAR_SIZE (linker command file)
+#>00000000          ___FLASH_ADDRESS (linker command file)
+#>00080000          ___FLASH_SIZE (linker command file)
+#>40000000          ___IPSBAR (linker command file)
+#>2000FFFC          ___SP_AFTER_RESET (linker command file)
+#>2000AC68          ___HEAP_START (linker command file)
+#>2000B068          ___HEAP_END (linker command file)
+#>2000B068          ___SP_END (linker command file)
+#>2000B468          ___SP_INIT (linker command file)
+#>2000B068          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>2000AC68          ___heap_addr (linker command file)
+#>00000400          ___heap_size (linker command file)
+#>2000B468          __SP_INIT (linker command file)
+#>20002A04          _romp_at (linker command file)
+
+# .romp
+#>20002A04          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  20000000 20000000 00000300 .interrupts interrupts
+  20000600 20000600 000023FC .text      code
+  2000AC00 200029FC 00000008 .data      data
+  2000AC08 2000AC08 00000060 .bss       data
+  2000AC68 20002A04 00000018 .romp      data
+  40000000 40000000 00000000 .ipsbar    ipsbar
+
+# Link start time: Thu Jul 06 16:29:55 2017
+# Link end time: Thu Jul 06 16:29:55 2017
