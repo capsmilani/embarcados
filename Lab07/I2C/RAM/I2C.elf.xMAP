@@ -1,0 +1,92 @@
+
+
+#>00000400          ___heap_size (linker command file)
+#>00000400          ___stack_size (linker command file)
+
+# .ipsbar
+
+# .interrupts
+#>20000000          ___VECTOR_RAM (linker command file)
+  20000000 00000300 .vectortable _InterruptVectorTable	(Vectors_c.obj)
+
+# .text
+  20000600 000000D0 .text   TI1_Init	(TI1_c.obj)
+  200006D0 0000002C .text   TI1_Interrupt	(TI1_c.obj)
+  200006FC 00000044 .text   I2C1_Init	(I2C1_c.obj)
+  20000740 00000014 .text   Cpu_Interrupt	(Cpu_c.obj)
+  20000754 00000024 .text   Cpu_INT_SCM_SWTIInterrupt	(Cpu_c.obj)
+  20000778 0000001C .text   Cpu_Delay100US	(Cpu_c.obj)
+  20000794 000000C2 .text   __initialize_hardware	(Cpu_c.obj)
+  20000856 0000036C .text   PE_low_level_init	(Cpu_c.obj)
+  20000BC2 00000008 .text   __initialize_system	(startcf_c.obj)
+  20000BCA 0000006C .text   __copy_rom_section	(startcf_c.obj)
+  20000C36 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  20000C92 00000004 .text   _ExitProcess	(startcf_c.obj)
+  20000C96 0000022A .text   clear_mem	(startcf_c.obj)
+  20000EC0 0000009A .text   _startup	(startcf_c.obj)
+  20000F5A 000000F0 .text   main	(main_c.obj)
+  2000104A 00000008 .text   Cpu_OnCoreWatchdogINT	(Events_c.obj)
+  20001052 00000018 .text   TI1_OnInterrupt	(Events_c.obj)
+  2000106A 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+  20001086 0000002C .text   __destroy_global_chain	(librt.a cf_staticinitia)
+  200010B2 0000000C .text   _ewl_exit	(librt.a abort_exit.o   )
+#>200010C0          ___ROM_AT (linker command file)
+#>200010C0          ___DATA_ROM (linker command file)
+
+# .data
+#>2000AC00          ___DATA_RAM (linker command file)
+#>2000AC00          __exception_table_start__ (linker command file)
+# Exception index
+  2000AC00 00000000         Exception Table Index	()
+#>2000AC00          __exception_table_end__ (linker command file)
+#>2000AC00          ___sinit__ (linker command file)
+# Linker generated symbols
+  2000AC00 00000004         static initializer	(linker generated)
+#>2000AC04          ___DATA_START (linker command file)
+  2000AC04 00000001 .data   slave_adress	(main_c.obj)
+  2000AC06 00000400 .data   tab	(main_c.obj)
+#>2000B008          ___DATA_END (linker command file)
+#>2000B008          __SDATA_START (linker command file)
+#>2000B008          __SDATA_END (linker command file)
+#>2000B008          __SDA_BASE (linker command file)
+
+# .bss
+#>2000B008          __START_SBSS (linker command file)
+#>2000B008          __END_SBSS (linker command file)
+#>2000B008          __START_BSS (linker command file)
+  2000B008 00000001 .bss    i	(main_c.obj)
+  2000B009 00000001 .bss    flag	(main_c.obj)
+  2000B00C 00000004 .bss    __global_destructor_chain	(librt.a cf_staticinitia)
+#>2000B010          __END_BSS (linker command file)
+#>20000000          ___RAMBAR (linker command file)
+#>00010000          ___RAMBAR_SIZE (linker command file)
+#>00000000          ___FLASH_ADDRESS (linker command file)
+#>00080000          ___FLASH_SIZE (linker command file)
+#>40000000          ___IPSBAR (linker command file)
+#>2000FFFC          ___SP_AFTER_RESET (linker command file)
+#>2000B010          ___HEAP_START (linker command file)
+#>2000B410          ___HEAP_END (linker command file)
+#>2000B410          ___SP_END (linker command file)
+#>2000B810          ___SP_INIT (linker command file)
+#>2000B410          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>2000B010          ___heap_addr (linker command file)
+#>00000400          ___heap_size (linker command file)
+#>2000B810          __SP_INIT (linker command file)
+#>200014C8          _romp_at (linker command file)
+
+# .romp
+#>200014C8          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  20000000 20000000 00000300 .interrupts interrupts
+  20000600 20000600 00000AC0 .text      code
+  2000AC00 200010C0 00000408 .data      data
+  2000B008 2000B008 00000008 .bss       data
+  2000B010 200014C8 00000018 .romp      data
+  40000000 40000000 00000000 .ipsbar    ipsbar
+
+# Link start time: Tue Jun 20 11:47:58 2017
+# Link end time: Tue Jun 20 11:47:58 2017
